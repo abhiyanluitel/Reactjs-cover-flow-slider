@@ -17,8 +17,8 @@ class App extends Component {
 
      <Grid item xs={8}>
       <Coverflow
-        width={7000}
-        height={300}
+        width={1000}
+        height={400}
       
         displayQuantityOfSide={2}
         navigation={false}
