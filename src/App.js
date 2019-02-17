@@ -32,9 +32,9 @@ class App extends Component {
              width: '600px',
              height: '300px'
            },
-           '@media (min-width: 560px)': {
-             width: '600px',
-             height: '300px',
+           '@media (min-width: 100px)': {
+             width: '900px',
+             height: '500px',
            },
          }}  
        >

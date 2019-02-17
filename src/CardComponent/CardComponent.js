@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { StyleRoot } from 'radium';
 
 const styles = {
   card: {
@@ -16,21 +17,29 @@ const styles = {
   
   },
   media: {
-    // ⚠️ object-fit is not supported by IE 11.
-    objectFit: 'cover',
+    '@media (max-width: 100px)': {
+      width: '300px',
+      height: '200px'
+    },
+
+    '@media (min-width: 2000px)': {
+      width: '960px',
+      height: '600px'
+    }
   },
 };
 
 function ImgMediaCard(props) {
   const { classes } = props;
   return (
-    <Card className={classes.card}>
+    <StyleRoot>
+      <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           component="img"
           alt="Image of Diamond"
           className={classes.media}
-          // height="100"
+           height="100"
           image='http://www.mining.com/wp-content/uploads/2018/08/unnamed.jpg'
           title="Diamond"
         />
@@ -45,6 +54,7 @@ function ImgMediaCard(props) {
         </CardContent>
       </CardActionArea>
     </Card>
+    </StyleRoot>
   );
 }
 
